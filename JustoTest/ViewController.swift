@@ -12,8 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+            let controller = HomeRouter.createModule()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
-
-
 }
 
